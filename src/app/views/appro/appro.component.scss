@@ -1,0 +1,22 @@
+.appro-cards {
+    max-width: 400px;
+}
+  
+.article {
+    background-image: url('../../../assets/img/icons/article.png');
+    background-size: cover;
+}
+
+.category {
+    background-image: url('../../../assets/img/icons/category.png');
+    background-size: cover;
+}
+
+#ligne1, #ligne2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#ligne2 {
+    margin-top: 20px;
+}
