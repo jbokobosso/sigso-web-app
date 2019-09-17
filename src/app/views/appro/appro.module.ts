@@ -10,6 +10,10 @@ import { AjouterArticleComponent } from './ajouter-article/ajouter-article.compo
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
 import { ModifierCategorieComponent } from './modifier-categorie/modifier-categorie.component';
 import { AjouterCategorieComponent } from './ajouter-categorie/ajouter-categorie.component';
+import { MatDividerModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { AjouterCategorieComponent } from './ajouter-categorie/ajouter-categorie
     ApproRoutingModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ]
 })
 export class ApproModule { }

@@ -1,1 +1,89 @@
-<p>modifier-article works!</p>
+<mat-grid-list cols = "10">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                Modifier un article / produit existant
+              </mat-card-title>
+              <div>
+                <!-- <button mat-raised-button>Reinitialiser</button>
+                <button (click) = "onSubmit()" mat-raised-button color="primary">Sauvegarder</button> -->
+              </div>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+              <form [formGroup]="modifierProduitForm" (ngSubmit)="onSubmit()">
+                <br> <br>
+                
+                <span class="text-muted">Choisissez l'article / produit à modifier'</span>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                <select (click)= "onSelectedProduit()" class="form-control" formControlName="idProduit" required>
+                  <option *ngFor="let produit of produits | async" value="{{produit.idProduit}}"> {{produit.designation}} </option>
+                </select>
+                </div>
+
+                <span class="text-muted">Donnez un nouveau nom à votre produit</span>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input formControlName="designation" id="libelle" type="text" class="form-control" placeholder="Nouveau nom du produit" required>
+                </div>
+      
+                <span class="muted-text">Le produit est-il périssable ?</span>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <select class="form-control" formControlName="estPerissable" required>
+                      <option value="true">Oui</option>
+                      <option value="false">Non</option>
+                  </select>
+                </div>
+                <div *ngIf="estPerissable.invalid && (estPerissable.dirty || estPerissable.touched)" class="alert alert-danger">
+                    <div *ngIf="form_is_invalid">
+                      Veuillez chosir 
+                    </div>
+                </div>
+
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <input formControlName="prixU" type="number" class="form-control" placeholder="Prix de vente unitaire" required>
+                </div>
+                <div *ngIf="prixU.invalid && (prixU.dirty || prixU.touched)" class="alert alert-danger">
+                    <div *ngIf="form_is_invalid">
+                      Donnez un prix de vente unitaire
+                    </div>
+                </div>
+
+                <span class="muted-text">A quelle catégorie appartient ce produit ?</span>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <select class="form-control" formControlName="catProduit" required>
+                        <option *ngFor="let category of categories | async" value="{{category.idCatProd}}">{{category.libelleCat}}</option>
+                    </select>
+                </div>
+                <div *ngIf="catProduit.invalid && (catProduit.dirty || catProduit.touched)" class="alert alert-danger">
+                    <div *ngIf="form_is_invalid">
+                      Selectionnez la catégorie du produit
+                    </div>
+                </div>
+      
+                <div class="row">
+                  <div class="col-6">
+                    <button type="submit" class="btn btn-primary px-4">Modifier</button>
+                    <button type="button" class="btn btn-danger px-4" (click)="resetForm()">Vider</button>
+                  </div>
+                </div>
+              </form>
+            </mat-card-content>
+      
+        </mat-card>
+      </mat-grid-list>
+      
