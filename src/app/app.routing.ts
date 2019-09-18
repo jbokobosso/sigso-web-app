@@ -8,6 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -64,7 +65,8 @@ export const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
+        canActivate: [AuthGuard]
       },
       {
         path: 'icons',
@@ -84,19 +86,23 @@ export const routes: Routes = [
       },
       {
         path: 'appro',
-        loadChildren: 'app/views/appro/appro.module#ApproModule'
+        loadChildren: 'app/views/appro/appro.module#ApproModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'ventes-achats',
-        loadChildren: 'app/views/ventes-achats/ventes-achats.module#VentesAchatsModule'
+        loadChildren: 'app/views/ventes-achats/ventes-achats.module#VentesAchatsModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'commandes-livraisons',
-        loadChildren: 'app/views/commandes-livraisons/commandes-livraisons.module#CommandesLivraisonsModule'
+        loadChildren: 'app/views/commandes-livraisons/commandes-livraisons.module#CommandesLivraisonsModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'entres-sorties',
-        loadChildren: 'app/views/entres-sorties/entres-sorties.module#EntresSortiesModule'
+        loadChildren: 'app/views/entres-sorties/entres-sorties.module#EntresSortiesModule',
+        canActivate: [AuthGuard]
       }
     ]
   },

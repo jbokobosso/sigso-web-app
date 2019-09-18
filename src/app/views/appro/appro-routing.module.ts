@@ -5,6 +5,7 @@ import { AjouterArticleComponent } from './ajouter-article/ajouter-article.compo
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
 import { AjouterCategorieComponent } from './ajouter-categorie/ajouter-categorie.component';
 import { ModifierCategorieComponent } from './modifier-categorie/modifier-categorie.component';
+import { NouvelApprovisionnementComponent } from './nouvel-approvisionnement/nouvel-approvisionnement.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'modifier-categorie',
     component: ModifierCategorieComponent
+  },
+  {
+    path: 'nouvel-approvisionnement',
+    component: NouvelApprovisionnementComponent
   }
 ];
 

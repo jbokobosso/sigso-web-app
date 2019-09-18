@@ -14,10 +14,11 @@ import { MatDividerModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { NouvelApprovisionnementComponent } from './nouvel-approvisionnement/nouvel-approvisionnement.component';
 
 
 @NgModule({
-  declarations: [ApproComponent, AjouterArticleComponent, ModifierArticleComponent, ModifierCategorieComponent, AjouterCategorieComponent],
+  declarations: [ApproComponent, AjouterArticleComponent, ModifierArticleComponent, ModifierCategorieComponent, AjouterCategorieComponent, NouvelApprovisionnementComponent],
   imports: [
     CommonModule,
     ApproRoutingModule,
