@@ -5,7 +5,9 @@
     "baseUrl": "./",
     "module": "esnext",
     "target": "es5",
-    "types": [],
+    "types": [
+      "node"
+    ],
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"

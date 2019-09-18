@@ -30,8 +30,7 @@
               "includePaths": ["./node_modules"]
             },
             "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js",
-              "src/assets/js/md5.min.js"
+              "node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {
