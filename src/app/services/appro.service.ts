@@ -68,4 +68,23 @@ export class ApproService {
     }, 
     {headers})
   }
+
+  // Charger les fournisseurs depuis la base de données
+  loadFournisseurs() {
+    return this.http.get<any>(this.config_service.apiHostAddress+"/fournisseur");
+  }
+
+  // Sauvegarder un enregistrement d'approvisionnement - un achat
+  saveAchat(formValue:any) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(this.config_service.apiHostAddress+"/achat",
+    {
+      "qteAchat": formValue.qteAchat,
+      "dateAchat": formValue.dateAchat,
+      "fournisseur": {"idFournisseur": formValue.idFournisseur},
+      "utilisateurs": {"idUtilisateur": localStorage.getItem("connectedUserId")},
+      "produit": {"idProduit": formValue.idProduit}
+    },
+    {headers})
+  }
 }
