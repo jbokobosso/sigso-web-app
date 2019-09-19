@@ -41,6 +41,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ApproModule } from './views/appro/appro.module';
+import { CommandesLivraisonsModule } from './views/commandes-livraisons/commandes-livraisons.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -58,6 +59,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TabsModule.forRoot(),
     ChartsModule,
     ApproModule,
+    CommandesLivraisonsModule,
+  
     ReactiveFormsModule,
     FormsModule
   ],

@@ -1,1 +1,45 @@
-<p>commandes-livraisons works!</p>
+<div class="container">
+
+    <h1>Gestion des commandes et livraisons clients & fournisseurs</h1>
+
+    <div id="ligne1">
+        <mat-card class="cmdlivr-cards">
+            <mat-card-header>
+               <div mat-card-avatar class="client"></div>
+               <mat-card-title>Ajouter nouveau client</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>  </mat-card-content>
+
+            <mat-card-actions>
+               <button class="pull-right" mat-raised-button color="primary" routerLink="ajouter-client" mat-button>Accéder</button>
+            </mat-card-actions>
+        </mat-card>
+
+    
+        <mat-card class="cmdlivr-cards">
+        <mat-card-header>
+            <div mat-card-avatar class="client"></div>
+            <mat-card-title>Modifier client existant</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>  </mat-card-content>
+        
+        <mat-card-actions>
+            <button class="pull-right" mat-raised-button color="primary" routerLink="modifier-client" mat-button>Accéder</button>
+        </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div id="ligne2">
+        <mat-card class="cmdlivr-cards">
+            <mat-card-header>
+                <div mat-card-avatar class="commande"></div>
+                <mat-card-title>Ajouter nouvelle commande </mat-card-title>
+            </mat-card-header>
+            <mat-card-content> </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="primary" routerLink="ajouter-fourn" mat-button>Accéder</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>
