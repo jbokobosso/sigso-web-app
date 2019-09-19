@@ -5,34 +5,67 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <form>
-                <h1>Register</h1>
-                <p class="text-muted">Create your account</p>
+              <form [formGroup] = signup_form (ngSubmit)="onSubmit()">
+                <h1>S'enregistrer</h1>
+                <p class="text-muted">Créez votre compte ici afin d'accéder à l'application</p>
+
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-user"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
+                  <input formControlName="lastName" type="text" class="form-control" placeholder="Nom" required>
                 </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input formControlName="firstName" type="text" class="form-control" placeholder="Prénom">
+                </div>
+                <div *ngIf="form && form.submitted" class="alert alert-danger">
+                  <div *ngIf="firstName.errors.required">
+                    Nom requis
+                  </div>
+                  <div *ngIf="firstName.errors.minlength">
+                    first name must be at least 4 characters long.
+                  </div>
+                  <div *ngIf="firstName.errors.forbiddenName">
+                    first name cannot be Bob.
+                  </div>
+                </div>
+                
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Email" autocomplete="email" required>
+                  <input formControlName="email" type="text" class="form-control" placeholder="Email" required>
                 </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input formControlName="username" type="text" class="form-control" placeholder="Pseudonyme" required>
+                </div>
+
+
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+                  <input formControlName="password" type="password" class="form-control" placeholder="Mot de passe" required>
                 </div>
+
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Repeat password" autocomplete="new-password" required>
+                  <input formControlName="confirm_password" type="password" class="form-control" placeholder="Confirmez mot de passe" required>
                 </div>
-                <button type="button" class="btn btn-block btn-success">Create Account</button>
+
+                <button type="submit" class="btn btn-lg btn-success pull-left">Créer compte</button>
+                <button id="back-to-connect" routerLink="/login" type="button" class="btn btn-link px-0">Me connecter plutôt</button>
+                <button type="reset" class="btn btn-danger pull-right">Effacer</button>
               </form>
             </div>
             <div class="card-footer p-4">

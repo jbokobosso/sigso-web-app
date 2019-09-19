@@ -70,4 +70,17 @@ export class AuthService {
     localStorage.removeItem("connectedUser");
     localStorage.removeItem("connectedUserType");
   }
+
+  register(formValue: any) {
+    var sha256 = require('sha-256-js');
+    return this.http.post(this.config_service.apiHostAddress+"/utilisateurs", 
+    {
+      nom: formValue.lastName,
+      prenom: formValue.firstName,
+      email: formValue.email,
+      pseudo: formValue.username,
+      mdp: sha256(formValue.password),
+      typeUtilisateur: "super_admin"
+    })
+  }
 }

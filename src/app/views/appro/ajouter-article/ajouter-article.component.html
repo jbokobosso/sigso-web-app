@@ -30,10 +30,10 @@
                 <div class="input-group-prepend">
                         <span>Le produit est-il perissable ?</span>
                 </div>
-                <input formControlName="estPerissable" id="estPerissable" type="radio" value="true" class="form-control" placeholder="Nom de la catégorie" required autofocus>
-                <label for="oui">Oui</label>
-                <input formControlName="estPerissable" id="estPerissable" type="radio" value="false" class="form-control" placeholder="Nom de la catégorie" required autofocus>
-                <label for="non">Non</label>
+                <select class="form-control" formControlName="estPerissable">
+                    <option value="true">Oui</option>
+                    <option value="false">Non</option>
+                </select>
             </div>
             <div *ngIf="estPerissable.invalid && (estPerissable.dirty || estPerissable.touched)" class="alert alert-danger">
                 <div *ngIf="estPerissable.errors.required">
