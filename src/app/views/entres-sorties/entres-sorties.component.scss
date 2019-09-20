@@ -1,0 +1,22 @@
+.entrees-livraisons-cards {
+    max-width: 400px;
+}
+  
+.client {
+    background-image: url('../../../assets/img/icons/client.ico');
+    background-size: cover;
+}
+
+.commande {
+    background-image: url('../../../assets/img/icons/commande.ico');
+    background-size: cover;
+}
+
+#ligne1, #ligne2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#ligne2 {
+    margin-top: 20px;
+}

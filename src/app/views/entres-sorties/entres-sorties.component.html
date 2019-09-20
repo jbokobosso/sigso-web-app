@@ -1,1 +1,55 @@
-<p>entres-sorties works!</p>
+<div class="container">
+
+    <h1>Gestion des entrées et sorties autres que les achats et ventes</h1>
+
+    <div id="ligne1">
+        <mat-card class="entrees-livraisons-cards">
+            <mat-card-header>
+               <div mat-card-avatar class="client"></div>
+               <mat-card-title>Déclarer une entrée</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>  </mat-card-content>
+
+            <mat-card-actions>
+               <button class="pull-right" mat-raised-button color="primary" routerLink="declarer-entree" mat-button>Accéder</button>
+            </mat-card-actions>
+        </mat-card>
+
+    
+        <mat-card class="entrees-livraisons-cards">
+        <mat-card-header>
+            <div mat-card-avatar class="client"></div>
+            <mat-card-title>Déclarer une sortie</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>  </mat-card-content>
+        
+        <mat-card-actions>
+            <button class="pull-right" mat-raised-button color="primary" routerLink="declarer-sortie" mat-button>Accéder</button>
+        </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div id="ligne2">
+        <mat-card class="entrees-livraisons-cards">
+            <mat-card-header>
+                <div mat-card-avatar class="commande"></div>
+                <mat-card-title>Voir les entrées</mat-card-title>
+            </mat-card-header>
+            <mat-card-content> </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="primary" routerLink="voir-entrees" mat-button>Accéder</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="entrees-livraisons-cards">
+            <mat-card-header>
+                <div mat-card-avatar class="commande"></div>
+                <mat-card-title>Voir les sorties</mat-card-title>
+            </mat-card-header>
+            <mat-card-content> </mat-card-content>
+            <mat-card-actions>
+                <button class="pull-right" mat-raised-button color="primary" routerLink="voir-sorties" mat-button>Accéder</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</div>
