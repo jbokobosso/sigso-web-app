@@ -1,0 +1,51 @@
+
+<div class="col-sm-8">
+    <div class="card">
+      <div class="card-header">
+        <strong>ENTREES</strong>
+        <small>Déclaration d'une entrée</small>
+      </div>
+      
+      <div class="card-body">
+
+        <form [formGroup]="declarerEntreeForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div class="col-sm-8">
+                   <label for="company">Sélectionnez le produit concerné</label>
+                   <select class="form-control" formControlName="produit">
+                       <option *ngFor="let produit of produits | async" value="{{produit.idProduit}}">{{produit.designation}}</option>
+                   </select>
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <label for="vat">Quantité à faire entrer</label>
+                    <input class="form-control"  formControlName="qteEntree" type="number" placeholder="Quantité" >
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <label for="street">Donnez la raison de l'entrée</label>
+                    <textarea  class="form-control" formControlName="raisonEntree" cols="30" rows="10" placeholder="Ecrivez la raison ici"></textarea>        
+                </div>
+            </div>
+    
+            <!-- <div class="form-group">
+                <div class="col-sm-8">
+                    <label for="street">La date quand le produit est entré</label>
+                    <input class="form-control"  formControlName="dateEntree" type="date">
+                </div>
+            </div> -->
+            
+            <div class="card-footer">
+                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Déclarer</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Vider les champs</button>
+            </div>
+        </form>
+
+    </div>
+  </div>

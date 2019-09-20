@@ -1,0 +1,45 @@
+
+<div class="col-sm-8">
+    <div class="card">
+      <div class="card-header">
+        <strong>SORTIES</strong>
+        <small>Déclaration d'une sortie</small>
+      </div>
+      
+      <div class="card-body">
+
+        <form [formGroup]="declarerSortieForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div class="col-sm-8">
+                   <label for="company">Sélectionnez le produit concerné</label>
+                   <select class="form-control" formControlName="produit">
+                       <option value="#">Choisissez</option>
+                       <option *ngFor="let produit of produits | async" value="{{produit.idProduit}}">{{produit.designation}}</option>
+                   </select>
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <label for="vat">Quantité à faire sortir</label>
+                    <input class="form-control"  formControlName="qteSortie" type="number" placeholder="Quantité" >
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <label for="street">Donnez la raison de la sortie</label>
+                    <textarea  class="form-control" formControlName="raisonSortie" cols="30" rows="10" placeholder="Ecrivez la raison ici"></textarea>        
+                </div>
+            </div>
+            
+            <div class="card-footer">
+                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Déclarer</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Vider les champs</button>
+            </div>
+        </form>
+
+    </div>
+  </div>

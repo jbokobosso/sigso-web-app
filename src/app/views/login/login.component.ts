@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin() {
-    // console.log("String: " + sha256("1234"));
     var sha256 = require('sha-256-js');
+    // console.log("String: " + sha256("1234"));
     this.auth_service.authenticate(
       {
         username: this.username.value,
