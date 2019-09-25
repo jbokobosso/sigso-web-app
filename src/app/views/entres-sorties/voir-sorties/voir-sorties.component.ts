@@ -33,7 +33,6 @@ export class VoirSortiesComponent implements OnInit {
     this.sortiesSubscription = this.entreesSorties_service.getSorties().subscribe(
       (receivedSorties) => {
         this.sorties = receivedSorties;
-        console.log(this.sorties);
       },
       (errorMessage) => {
         this.toast_service.showToastError("Erreur de chargement des sorties, rechargez cette fenêtre", 5000);
