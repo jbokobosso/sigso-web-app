@@ -8,12 +8,20 @@
       
       <div class="card-body">
 
+<<<<<<< HEAD
         <form [formGroup]="declarerEntreeForm" (ngSubmit)="onSubmit()">
+=======
+        <form [formGroup]="declarerEntreeForm">
+>>>>>>> cfc7778d40ff4634db2da3b4b9e01a698a661035
             <div class="form-group">
                 <div class="col-sm-8">
                    <label for="company">Sélectionnez le produit concerné</label>
                    <select class="form-control" formControlName="produit">
+<<<<<<< HEAD
                        <option *ngFor="let produit of produits | async" value="{{produit.idProduit}}">{{produit.designation}}</option>
+=======
+                       <option *ngFor="let produit of produits | async" value="produit.idProduit">{{produit.idProduit}}</option>
+>>>>>>> cfc7778d40ff4634db2da3b4b9e01a698a661035
                    </select>
                 </div>
             </div>
@@ -34,12 +42,20 @@
                 </div>
             </div>
     
+<<<<<<< HEAD
             <!-- <div class="form-group">
+=======
+            <div class="form-group">
+>>>>>>> cfc7778d40ff4634db2da3b4b9e01a698a661035
                 <div class="col-sm-8">
                     <label for="street">La date quand le produit est entré</label>
                     <input class="form-control"  formControlName="dateEntree" type="date">
                 </div>
+<<<<<<< HEAD
             </div> -->
+=======
+            </div>
+>>>>>>> cfc7778d40ff4634db2da3b4b9e01a698a661035
             
             <div class="card-footer">
                 <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Déclarer</button>
