@@ -1,0 +1,35 @@
+<div class="row">
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> LISTE DES CLIENTS
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped table-sm">
+        <thead>
+          <tr>
+            <th># Réf client </th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse de livraison</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients | async">
+            <td> CLT-{{client.idClient}}</td>
+            <td>{{client.nom}}</td>
+            <td>{{client.prenom}}</td>
+            <td>{{client.email}}</td>
+            <td>{{client.adresseLivraison}}</td>
+            <td id="telephone">
+              <span class="badge badge-success"><a href="tel:{{client.telephone}}">{{client.telephone}}</a></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
